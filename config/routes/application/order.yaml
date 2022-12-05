@@ -1,0 +1,11 @@
+app_order_single:
+    path: /orders/{id}
+    controller: App\Controller\OrderController::single
+    methods: GET
+    requirements:
+        id: '\d+'
+
+app_order_list:
+    path: /orders
+    controller: App\Controller\OrderController::list
+    methods: GET

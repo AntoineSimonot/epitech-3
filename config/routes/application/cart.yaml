@@ -1,0 +1,53 @@
+app_cart_single:
+    path: /carts/{id}
+    controller: App\Controller\CartController::single
+    methods: GET
+    requirements:
+        id: '\d+'
+
+app_cart_list:
+    path: /carts
+    controller: App\Controller\CartController::list
+    methods: GET
+
+app_cart_add:
+    path: /carts
+    controller: App\Controller\CartController::add
+    methods: POST
+
+app_cart_modify:
+    path: /carts/{id}
+    controller: App\Controller\CartController::update
+    methods: PUT
+    requirements:
+        id: '\d+'
+
+app_cart_delete:
+    path: /carts/{id}
+    controller: App\Controller\CartController::delete
+    methods: DELETE
+    requirements:
+        id: '\d+'
+
+app_cart_remove_product:
+    path: /carts/{cart_id}/products/{product_id}/remove-from-cart
+    controller: App\Controller\CartController::removeProduct
+    methods: PATCH
+    requirements:
+        cart_id: '\d+'
+        product_id: '\d+'
+
+app_cart_add_product:
+    path: /carts/{cart_id}/products/{product_id}/add-to-cart
+    controller: App\Controller\CartController::addProduct
+    methods: PATCH
+    requirements:
+        cart_id: '\d+'
+        product_id: '\d+'
+
+app_cart_validate:
+    path: /carts/{cart_id}/validate
+    controller: App\Controller\CartController::validate
+    methods: PATCH
+    requirements:
+        cart_id: '\d+'
